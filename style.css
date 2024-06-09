@@ -1,0 +1,124 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+:root
+{
+    --ash-gray: rgba(172, 189, 186, 1);
+    --azure-web: rgba(205, 221, 221, 1);
+    --rose-quartz: rgba(165, 153, 181, 1);
+    --jet: rgba(46, 47, 47, 1);
+    --rich-black: rgba(5, 16, 20, 1);
+}
+
+@font-face {
+    font-family: DigitalFont;
+    src: url('resources/digital-7/digital-7.ttf');
+}
+
+@font-face {
+    font-family: ChocolateSans;
+    src: url('resources/Chocolate_Classical_Sans/ChocolateClassicalSans-Regular.ttf');
+}
+
+body
+{
+    display: flex;
+    width: 100svw;
+    height: 100svh;
+    align-items: center;
+    justify-content: center;
+}
+
+#info
+{
+    position: fixed;
+    top: 1svh;
+    left: 1svh;
+}
+
+#info img
+{
+    height: 5svh;
+}
+
+#calculatorBody
+{
+    background-color: var(--jet);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    font-size: 2rem;
+    width: 50%;
+    max-width: 50%;
+    height: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#calculatorDisplay
+{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-around;
+    font-family: DigitalFont;
+    font-size: 4.5vw;
+    background-color: var(--azure-web);
+    height: calc(25%);
+    width: calc(90%);
+    padding: 1%;
+}
+
+#calculatorKeyDisplay
+{
+    font-family: ChocolateSans;
+    color: var(--rich-black);
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--ash-gray);
+    height: calc(65%);
+    width: calc(90%);
+    padding: 1%;
+}
+
+.row
+{
+    flex: 1;
+    margin: 1%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.key
+{
+    flex: 1;
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+}
+
+.key:hover
+{
+    background-color: rgba(0, 0, 0, 0.125);
+}
+
+.key:active
+{
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+@media (max-aspect-ratio: 1/1)
+{
+    #calculatorDisplay
+    {
+        font-size: 4.9vw;
+    }
+}
