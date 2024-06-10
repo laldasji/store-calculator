@@ -24,27 +24,27 @@ const simplify = (result, operator, operand) =>
     num2 = Number(operand);
     if (operator == '=')
         return operand;
-    if (operator == '+')
-        return num1 + num2;
-    else if (operator == '*')
-        return num1 * num2;
-    else if (operator == 'EXP')
-        return num1 ** num2;
-    else if (operator == '/')
-    {
-        let res = (num1/num2);
-        let stringRes = String(res).split('.');
-        if (stringRes.length == 2 && stringRes[1].length > 5)
-            return res.toFixed(5);
-        else
-            return res;
-    }
-    else if (operator == '%')
-        return num1%num2;
-    else if (operator == '-')
-        return num1 - num2;
-}
+    let res = 0;
 
+    if (operator == '+')
+        res = num1 + num2;
+    else if (operator == '*')
+        res = num1 * num2;
+    else if (operator == 'EXP')
+        res = num1 ** num2;
+    else if (operator == '/')
+        res = (num1/num2);
+    else if (operator == '%')
+        res = num1%num2;
+    else if (operator == '-')
+        res = num1 - num2;
+
+    let stringRes = String(res).split('.');
+    if (stringRes.length == 2 && stringRes[1].length > 5)
+        return res.toFixed(5);
+    else
+        return res;
+}
 
 const detectOperator = (operator) => {
     result = simplify(result, previousOperator, operand);
