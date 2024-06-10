@@ -49,9 +49,8 @@ body
     background-color: var(--jet);
     border-radius: 1.5rem;
     padding: 2rem;
+    width: calc(50%);
     font-size: 2rem;
-    width: 50%;
-    max-width: 50%;
     height: 90%;
     max-height: 90%;
     display: flex;
@@ -117,8 +116,27 @@ body
 
 @media (max-aspect-ratio: 1/1)
 {
+    #info img
+    {
+        height: 3svh;
+    }
+    #calculatorBody
+    {
+        width: calc(75%);
+        padding: 1rem;
+    }
     #calculatorDisplay
     {
+        width: calc(95%);
         font-size: 4.9vw;
     }
+    #calculatorKeyDisplay
+    {
+        width: calc(95%);
+    }
+    .key
+    {
+        font-size: 3vh;
+    }
+
 }

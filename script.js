@@ -28,6 +28,8 @@ const simplify = (result, operator, operand) =>
         return num1 + num2;
     else if (operator == '*')
         return num1 * num2;
+    else if (operator == 'EXP')
+        return num1 ** num2;
     else if (operator == '/')
     {
         let res = (num1/num2);
@@ -116,8 +118,10 @@ window.addEventListener('keydown', event => {
         detectOperator(event.key);
     else if (event.key == '+' || event.key == '-')
         detectOperator(event.key);
-    else if (event.key == '^' || event.key == '%')
+    else if (event.key == '%')
         detectOperator(event.key);
+    else if (event.key == 'e')
+        detectOperator('EXP');
 
     else if (event.key == '=' || event.key == 'Enter')
         detectOperator('=');
