@@ -6,11 +6,11 @@
 
 :root
 {
-    --ash-gray: rgba(172, 189, 186, 1);
-    --azure-web: rgba(205, 221, 221, 1);
-    --rose-quartz: rgba(165, 153, 181, 1);
-    --jet: rgba(46, 47, 47, 1);
-    --rich-black: rgba(5, 16, 20, 1);
+    --key-display: #3E3939;
+    --display: #F6F4F4;
+    --number-keys: rgb(246, 244, 244, 0.5);
+    --main-body: #2C2727;
+    --operator: #FF7517;
 }
 
 @font-face {
@@ -37,17 +37,53 @@ body
     position: fixed;
     top: 1svh;
     left: 1svh;
+    z-index: 999;
+    height: 5svh;
 }
 
-#info img
+.switchColor
 {
-    height: 5svh;
+    stroke: white;
+}
+
+.howToUsePanel
+{
+    background-color: var(--key-display);
+    font-size: 1.5rem;
+    color: var(--display);
+    padding-top: 10svh;
+    padding-left: 1%;
+    padding-right: 1%;
+    position: absolute;
+    overflow: hidden scroll;
+    height: 90%;
+    width: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition-duration: 0.5s;
+    z-index: 990;
+}
+
+.expression
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 100;
+    padding-left: 20%;
+}
+
+.toggleInfo
+{
+    display: inline;
+    width: calc(20%);
+    opacity: 1;
 }
 
 #calculatorBody
 {
-    background-color: var(--jet);
-    border-radius: 1.5rem;
+    background-color: var(--main-body);
+    border-radius: 2rem;
     padding: 2rem;
     width: calc(50%);
     font-size: 2rem;
@@ -57,17 +93,25 @@ body
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    transition-duration: 0.5s;
+}
+
+.obscure
+{
+    opacity: 0.5;
 }
 
 #calculatorDisplay
 {
     display: flex;
+    color: var(--main-body);
     flex-direction: column;
     align-items: end;
     justify-content: space-around;
+    border-radius: 2rem;
     font-family: DigitalFont;
     font-size: 4.5vw;
-    background-color: var(--azure-web);
+    background-color: var(--display);
     height: calc(25%);
     width: calc(90%);
     padding: 1%;
@@ -76,10 +120,10 @@ body
 #calculatorKeyDisplay
 {
     font-family: ChocolateSans;
-    color: var(--rich-black);
+    border-radius: 2rem;
     display: flex;
     justify-content: space-around;
-    background-color: var(--ash-gray);
+    background-color: var(--key-display);
     height: calc(65%);
     width: calc(90%);
     padding: 1%;
@@ -101,17 +145,24 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2vw;
+    border-radius: 2em;
+    font-size: 1em;
+    background-color: var(--number-keys);
 }
 
 .key:hover
 {
-    background-color: rgba(0, 0, 0, 0.125);
+    opacity: 0.8;
 }
 
 .key:active
 {
-    background-color: rgba(0, 0, 0, 0.25);
+    opacity: 0.6;
+}
+
+.operator
+{
+    background-color: var(--operator);
 }
 
 @media (max-aspect-ratio: 1/1)
@@ -123,6 +174,7 @@ body
     #calculatorBody
     {
         width: calc(75%);
+        height: calc(70%);
         padding: 1rem;
     }
     #calculatorDisplay
@@ -137,6 +189,15 @@ body
     .key
     {
         font-size: 3vh;
+        height: fit-content;
     }
-
+    .howToUsePanel
+    {
+        padding-left: 10%;
+        padding-right: 5%;
+    }
+    .toggleInfo
+    {
+        width: calc(80%);
+    }
 }

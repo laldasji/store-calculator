@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traditional Calculator</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="resources/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="info"><img src="resources/info-icon.png" alt="info" title="How to use the calculator"></div>
+    <svg id="info" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path style="transition-duration: 1s;" class="infoButtonLines" d="M12 17V11" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+        <circle style="transition-duration: 1s;" class="infoButtonLines" cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" stroke="#1C274C"/>
+        <path style="transition-duration: 1s;" class="infoButtonLines" d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="howToUsePanel">
+        The following calculator evaluates expressions in the form of a stack. That is, expressions are evaluated as they are entered, and not using the
+        rule BODMAS, or PEMDAS. <br> For example, the expression:
+        <p class="expression">10 + 45 * 2</p>
+        <br>
+        would NOT be evaluated as
+        <p class="expression">
+            &#8658; 10 + 45 * 2
+            <br>
+            = 10 + (45 * 2)
+            <br>
+            = 10 + 90
+            <br>
+            = 100
+        </p>
+        <br>
+        Instead, it will be evaluated as follows:
+        <p class="expression">
+            &#8658; 10 + 45 * 2
+            <br>
+            = 55 * 2
+            <br>
+            = 110
+        </p>
+        <br>
+        Expressions will be evaluated left to right, as they are input into the calculator
+        <br>
+        <br>
+        A Brief Description of unique buttons:
+        <br>
+        <br>
+        <ul>
+            <li>AC: clears all previous calculations </li>
+            <li>C: works as a "backspace", clears only the last character. </li>
+            <li>EXP: exponent, as: <p class="expression">result <sup>operand</sup></p></li>
+            <li>%: modulus operator, returns remainder</li>
+        </ul>
+        <br><br><br>
+    </div>
     <div id="calculatorBody">
         <div id="calculatorDisplay">
             <div id="calculatorResultDisplay">
@@ -89,4 +134,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

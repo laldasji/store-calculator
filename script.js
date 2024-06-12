@@ -7,6 +7,7 @@ let result = '';
 let previousOperator = '';
 let operand = '';
 
+const calculatorBody = document.querySelector('#calculatorBody');
 const calculatorCurrentDisplay = document.querySelector("#calculatorCurrentDisplay");
 const calculatorResultDisplay = document.querySelector("#calculatorResultDisplay");
 
@@ -14,6 +15,16 @@ const operatorNodeList = document.querySelectorAll('.operator');
 const numberNodeList = document.querySelectorAll('.number');
 const clearNode = document.querySelector('.clear');
 
+const infoButton = document.querySelector('#info');
+const howToUsePanel = document.querySelector('.howToUsePanel');
+const infoButtonLines = document.querySelectorAll('.infoButtonLines');
+
+infoButton.addEventListener('click', () => {
+    howToUsePanel.classList.toggle('toggleInfo');
+    calculatorBody.classList.toggle('obscure');
+    for (let i = 0; i < infoButtonLines.length; i++)
+        infoButtonLines[i].classList.toggle('switchColor');
+});
 
 /* Main calculator logic */
 const simplify = (result, operator, operand) =>
