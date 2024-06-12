@@ -129,8 +129,8 @@ window.addEventListener('keydown', event => {
         detectOperator(event.key);
     else if (event.key == '+' || event.key == '-')
         detectOperator(event.key);
-    else if (event.key == '%')
-        detectOperator(event.key);
+    else if (event.key == 'm')
+        detectOperator('%');
     else if (event.key == 'e')
         detectOperator('EXP');
 
