@@ -1,1 +1,1 @@
-# dukaani-calculator
+# store-calculator
