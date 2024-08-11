@@ -1,6 +1,6 @@
 window.addEventListener('keypress', event => {
     if (event.key === '/')
-    event.preventDefault();
+        event.preventDefault();
 });
 
 let result = '';
@@ -27,8 +27,7 @@ infoButton.addEventListener('click', () => {
 });
 
 /* Main calculator logic */
-const simplify = (result, operator, operand) =>
-{
+const simplify = (result, operator, operand) => {
     if (result == '')
         return operand;
     num1 = Number(result);
@@ -44,9 +43,9 @@ const simplify = (result, operator, operand) =>
     else if (operator == 'EXP')
         res = num1 ** num2;
     else if (operator == '/')
-        res = (num1/num2);
+        res = (num1 / num2);
     else if (operator == '%')
-        res = num1%num2;
+        res = num1 % num2;
     else if (operator == '-')
         res = num1 - num2;
 
@@ -66,14 +65,12 @@ const detectOperator = (operator) => {
 }
 
 const detectNumber = (key) => {
-    if (key == 'Backspace')
-    {
+    if (key == 'Backspace') {
         operand = operand.slice(0, -1);
         calculatorCurrentDisplay.textContent = operand;
         return;
     }
-    if (operand.includes('.'))
-    {
+    if (operand.includes('.')) {
         if (key == '.' || operand.length > 15)
             return;
     }
@@ -93,16 +90,14 @@ const detectClear = () => {
 
 /* Adding eventListeners */
 
-for (let i = 0; i < operatorNodeList.length; i++)
-{
+for (let i = 0; i < operatorNodeList.length; i++) {
     const node = operatorNodeList[i];
     node.addEventListener('click', () => {
         detectOperator(node.id);
     });
 }
 
-for (let i = 0; i < numberNodeList.length; i++)
-{
+for (let i = 0; i < numberNodeList.length; i++) {
     const node = numberNodeList[i];
     console.log(node.id);
     node.addEventListener('click', () => {
